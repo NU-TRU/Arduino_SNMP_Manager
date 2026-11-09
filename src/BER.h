@@ -3,7 +3,7 @@
 
 #include "SNMPConfig.h"
 
-#include <Arduino.h>
+
 #include <IPAddress.h>
 #include <new>
 

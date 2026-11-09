@@ -40,7 +40,7 @@ bool SNMPGet::sendTo(IPAddress ip)
             return false;
     if (!build())
     {
-        Serial.println(F("Failed Building packet.."));
+       // Serial.println(F("Failed Building packet.."));
         delete packet;
         packet = 0;
         return false;

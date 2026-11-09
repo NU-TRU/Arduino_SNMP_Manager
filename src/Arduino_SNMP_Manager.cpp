@@ -148,10 +148,10 @@ bool SNMPManager::parsePacket(size_t length)
                  memcmp(_community, snmpgetresponse->communityString,
                         snmpgetresponse->communityLength) != 0))
             {
-                Serial.print(F("Invalid community or version - Community: "));
-                Serial.print(snmpgetresponse->communityString);
-                Serial.print(F(" - Version: "));
-                Serial.println(snmpgetresponse->version);
+              //  Serial.print(F("Invalid community or version - Community: "));
+              //  Serial.print(snmpgetresponse->communityString);
+              //  Serial.print(F(" - Version: "));
+              //  Serial.println(snmpgetresponse->version);
                 delete snmpgetresponse;
                 return false;
             }
@@ -226,12 +226,12 @@ bool SNMPManager::parsePacket(size_t length)
                 ASN_TYPE callbackType = callback->type;
                 if (callbackType != responseType)
                 {
-                    Serial.print(F("Incorrect Callback type. Expected: "));
-                    Serial.print(callbackType);
-                    Serial.print(F(" Received: "));
-                    Serial.print(responseType);
-                    Serial.print(F(" - When calling: "));
-                    Serial.println(responseOID);
+                   // Serial.print(F("Incorrect Callback type. Expected: "));
+                   // Serial.print(callbackType);
+                   // Serial.print(F(" Received: "));
+                   // Serial.print(responseType);
+                   // Serial.print(F(" - When calling: "));
+                   // Serial.println(responseOID);
                     delete snmpgetresponse;
                     snmpgetresponse = 0;
                     return false;
@@ -358,7 +358,7 @@ bool SNMPManager::parsePacket(size_t length)
     else
     {
 #ifndef SUPPRESS_ERROR_FAILED_PARSE
-        Serial.println(F("SNMPGETRESPONSE: FAILED TO PARSE"));
+      //  Serial.println(F("SNMPGETRESPONSE: FAILED TO PARSE"));
 #endif
         delete snmpgetresponse;
         return false;
